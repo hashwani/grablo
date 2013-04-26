@@ -1,0 +1,12 @@
+# BEGIN IfModule
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteBase /i/
+
+# rule for image
+RewriteRule ^images\/([a-zA-Z0-9\-]+)_([1-9][0-9]*)_([1-9][0-9]*)x([1-9][0-9]*)\.([a-zA-Z]+)$ index.php?title=$1&id=$2&width=$3&height=$4&ext=$5 [L]
+RewriteRule ^slideshow/images\/([a-zA-Z0-9\-]+)_([1-9][0-9]*)_([1-9][0-9]*)x([1-9][0-9]*)\.([a-zA-Z]+)$ index.php?title=$1&id=$2&width=$3&height=$4&ext=$5 [L]
+</IfModule>
+
+# END IfModule

@@ -1,0 +1,11 @@
+# BEGIN IfModule
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteBase /grablo/
+
+# rule for image
+RewriteRule ^thumbs\/([a-zA-Z0-9\-\_]+)\.([a-zA-Z]+)$ media/resizer/index.php?title=$1&ext=$2 [L]
+</IfModule>
+
+# END IfModule

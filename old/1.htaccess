@@ -1,0 +1,18 @@
+# BEGIN IfModule
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+
+# rule for image
+RewriteRule ^([a-zA-Z0-9\-]+)_([1-9][0-9]*)\.((jpg)|(gif)|(png)|(jpeg)|(tif)|(tiff)|(bmp)|(svg))$ libs/htaccess_handler.php?title=$1&id=$2&img=$3 [L]
+
+# rule for news viewer
+RewriteRule ^news/([a-zA-Z0-9\-]+)_([1-9][0-9]*)1\.html$ news_viewer_1.php?title=$1&id=$2 [L]
+
+# rule for category viewer
+RewriteRule ^([a-zA-Z0-9\-]+)-news\.html$ category_viewer_1.php?title=$1 [L]
+
+</IfModule>
+
+# END IfModule
